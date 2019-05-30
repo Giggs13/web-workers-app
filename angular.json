@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prime-numbers-app": {
+    "web-workers-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prime-numbers-app",
+            "outputPath": "dist/web-workers-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -57,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "prime-numbers-app:build"
+            "browserTarget": "web-workers-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "prime-numbers-app:build:production"
+              "browserTarget": "web-workers-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prime-numbers-app:build"
+            "browserTarget": "web-workers-app:build"
           }
         },
         "test": {
@@ -94,7 +95,8 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
+              "tsconfig.worker.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -105,15 +107,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "prime-numbers-app:serve"
+            "devServerTarget": "web-workers-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "prime-numbers-app:serve:production"
+              "devServerTarget": "web-workers-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "prime-numbers-app"
+  "defaultProject": "web-workers-app"
 }
